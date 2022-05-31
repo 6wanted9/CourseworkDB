@@ -34,7 +34,7 @@ namespace CourseworkDB.Services
             {
                 CustomerId = model.CustomerId,
                 Number = Guid.NewGuid(),
-                Date = model.Date,
+                Date = DateTime.Now.Date,
             };
             
             var newOrder = context.Add(order).Entity;
