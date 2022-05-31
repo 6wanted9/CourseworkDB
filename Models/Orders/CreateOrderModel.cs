@@ -10,6 +10,7 @@ namespace CourseworkDB.Models.Orders
     {
         public int CustomerId { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
