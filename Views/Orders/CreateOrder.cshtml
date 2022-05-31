@@ -5,12 +5,8 @@
 @{
     ViewData["Title"] = "Create Order";
     Layout = "_Layout";
-    var globalIterator = 0;
     Model.OrderLines = new List<OrderLineModel>();
     var productsSelectList = ViewBag.Products as List<Product>;
-
-    var productsAmount = productsSelectList.Count();
-
 }
 
 <div Id="CreateOrderForm">
@@ -18,7 +14,7 @@
     <form method="post" asp-controller="Orders" asp-action="CreateOrder">
         <div class="form-group">
             <label asp-for="Date" class="control-label">Shipment Date</label>
-            <input asp-for="Date" id="datepicker" type="text" class="form-control" value="@DateTime.Now.ToString("dd-MM-yyyy")"/>
+            <input asp-for="Date" type="date" class="form-control" value="@DateTime.Now.ToString("yyyy-MM-dd")"/>
             <span asp-validation-for="Date" class="text-danger"></span>
         </div>
         <br>
